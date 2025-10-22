@@ -1,2 +1,5 @@
-Django == 5.1.2
-ANTLR == 4.13.2
+Django==4.2.7
+antlr4-python3-runtime==4.13.2
+gunicorn==21.2.0
+whitenoise==6.6.0
+packaging==25.0
