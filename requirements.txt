@@ -1,10 +1,4 @@
 Django==4.2.7
 antlr4-python3-runtime==4.13.2
-<<<<<<< HEAD
 gunicorn==21.2.0
 whitenoise==6.6.0
-packaging==25.0
-=======
-asgiref==3.7.2
-sqlparse==0.4.4
->>>>>>> origin/master
