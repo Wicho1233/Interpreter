@@ -3,13 +3,12 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-minilang-secret-key-2024')
-
+SECRET_KEY = os.environ.get('SECRET_KEY', '46rgi+e(&5@&jhgun%yzn&s$gkd#0rfkr+7bruy4onz!jvuk!')
 DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = ['*']
 
-# Application definition - SOLO apps esenciales
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'minilang_app',
@@ -20,7 +19,8 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    # REMOVER el middleware de mensajes si no lo necesitas:
+    # 'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -35,7 +35,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.messages.context_processors.messages',
+                # REMOVER el context processor de mensajes:
+                # 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -43,23 +44,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'minilang_project.wsgi.application'
 
-# Sin base de datos
 DATABASES = {}
 
-# Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "minilang_app/static",
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# WhiteNoise configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
