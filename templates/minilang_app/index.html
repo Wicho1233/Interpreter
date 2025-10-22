@@ -1,0 +1,20 @@
+{% extends 'minilang_app/base.html' %}
+
+{% block content %}
+<div class="interpreter-container">
+    <h1>MiniLang Interpreter</h1>
+    
+    <div class="editor-section">
+        <textarea id="codeEditor" placeholder=""></textarea>
+        <div class="buttons">
+            <button id="runButton">Run Code</button>
+            <button id="clearButton">Clear</button>
+        </div>
+    </div>
+    
+    <div class="output-section">
+        <h3>Output:</h3>
+        <div id="outputContainer"></div>
+    </div>
+</div>
+{% endblock %}
